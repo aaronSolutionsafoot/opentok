@@ -62,7 +62,8 @@ router.get('/room/:name', function (req, res) {
     res.send({
       apiKey: apiKey,
       sessionId: sessionId,
-      token: token
+      token: token,
+      expireTime:2592000
     });
   }
   // if this is the first time the room is being accessed, create a new session ID
@@ -86,7 +87,8 @@ router.get('/room/:name', function (req, res) {
       res.send({
         apiKey: apiKey,
         sessionId: session.sessionId,
-        token: token
+        token: token,
+        expireTime:2592000
       });
     });
   }
